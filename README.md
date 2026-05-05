@@ -1,1 +1,1 @@
-# staticky8
+# staticky7

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michal Bartoš | IT Profil 8.0</title>
+    <meta name="description" content="IT profil Michala Bartoše – dovednosti, zájmy a projekty. Moderní SPA portfolio.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="glass-bg"></div>
+
+    <main class="container">
+        <header class="profile-header">
+            <div class="avatar-container">
+                <img src="avatar.png" alt="Profilová fotka Michala Bartoše" id="profile-img">
+            </div>
+            <h1>Michal Bartoš</h1>
+            <p class="subtitle">IT Student &amp; Developer</p>
+        </header>
+
+        <nav class="main-nav" id="main-nav">
+            <a href="#/home" data-route="home" id="nav-home">Domů</a>
+            <a href="#/interests" data-route="interests" id="nav-interests">Zájmy</a>
+            <a href="#/skills" data-route="skills" id="nav-skills">Dovednosti</a>
+        </nav>
+
+        <!-- Veškerý dynamický obsah se vykresluje sem -->
+        <div id="app"></div>
+    </main>
+
+    <!-- Inline data – fallback pro file:// protokol (fetch nefunguje bez HTTP serveru) -->
+    <script>
+        window.profileData = {
+            "name": "Michal Bartoš",
+            "skills": [
+                "HTML5 & Semantic Web",
+                "CSS3 & Modern Layouts",
+                "JavaScript (ES6+)",
+                "Git & GitHub Workflow",
+                "Tailwind CSS",
+                "Responsive Design"
+            ],
+            "interests": [
+                "Artificial Intelligence",
+                "Web Application Development",
+                "User Interface Design",
+                "Gaming & Hardware"
+            ],
+            "projects": [
+                {
+                    "title": "Snake Game",
+                    "description": "A classic arcade game built with vanilla JavaScript and Canvas API.",
+                    "tech": "JavaScript, CSS3"
+                },
+                {
+                    "title": "Personal Portfolio",
+                    "description": "Dynamic profile page loading data from JSON.",
+                    "tech": "HTML, JS, JSON"
+                }
+            ]
+        };
+    </script>
+
+    <!-- View moduly -->
+    <script src="views/home.js"></script>
+    <script src="views/interests.js"></script>
+    <script src="views/skills.js"></script>
+    <!-- Hlavní router -->
+    <script src="app.js"></script>
+</body>
+
+</html>
